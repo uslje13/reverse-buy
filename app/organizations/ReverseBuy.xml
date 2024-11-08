@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="john_admin">
+      <firstName>John</firstName>
+      <lastName>Doe</lastName>
+      <title>Mr</title>
+      <jobTitle>Administrator</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">Admin</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="jane_agent">
+      <firstName>Jane</firstName>
+      <lastName>Smith</lastName>
+      <title>Ms</title>
+      <jobTitle>Agent</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">Agent</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="User1">
+      <firstName>Michael</firstName>
+      <lastName>Jonhson</lastName>
+      <title>Mr</title>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">Client</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="Admin">
+      <displayName>Admin</displayName>
+    </role>
+    <role name="Agent">
+      <displayName>Agent</displayName>
+    </role>
+    <role name="Clinet">
+      <displayName>Clinet</displayName>
+    </role>
+    <role name="Guest">
+      <displayName>Guest</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="ReverseBuy">
+      <displayName>ReverseBuy</displayName>
+    </group>
+    <group name="Clients" parentPath="/ReverseBuy">
+      <displayName>Clients</displayName>
+      <description>This group represents registered buyers who purchase products or services from agents. They can browse listings, place orders, and interact with agents.</description>
+    </group>
+    <group name="Agents" parentPath="/ReverseBuy">
+      <displayName>Agents</displayName>
+      <description>This group consists of users who list and sell products or services. They manage listings, set prices, and handle transactions with clients.</description>
+    </group>
+    <group name="Administration" parentPath="/ReverseBuy">
+      <displayName>Administration</displayName>
+      <description>Oversees the auction marketplace, managing agents, clients, and overall system configuration.</description>
+    </group>
+    <group name="Unregistered Users" parentPath="/ReverseBuy">
+      <displayName>Unregistered Users</displayName>
+      <description>Allows visitors to view certain items or service listings without making purchases.
+</description>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>john_admin</userName>
+      <roleName>Admin</roleName>
+      <groupName>Administration</groupName>
+      <groupParentPath>/ReverseBuy</groupParentPath>
+    </membership>
+    <membership>
+      <userName>jane_agent</userName>
+      <roleName>Agent</roleName>
+      <groupName>Agents</groupName>
+      <groupParentPath>/ReverseBuy</groupParentPath>
+    </membership>
+    <membership>
+      <userName>User1</userName>
+      <roleName>Clinet</roleName>
+      <groupName>Clients</groupName>
+      <groupParentPath>/ReverseBuy</groupParentPath>
+    </membership>
+  </memberships>
+</organization:Organization>

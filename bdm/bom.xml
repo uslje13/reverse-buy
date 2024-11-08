@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.Address">
+            <fields>
+                <field type="STRING" length="255" name="city" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="country" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="zipCode" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="street" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="streetNumber" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.UserData">
+            <fields>
+                <field type="STRING" length="255" name="attribute" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="alias" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="email" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Address" fetchType="EAGER" name="address" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
